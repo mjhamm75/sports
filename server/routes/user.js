@@ -1,4 +1,4 @@
-var data = require('./../data/user.js');
+var data = require('./../mock-data/user.js');
 
 var user = {
 	getUser: function(req, res) {

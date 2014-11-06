@@ -6,7 +6,7 @@ var config = function($routeProvider) {
 };
 
 var controller = function($scope){
-	$scope.test = "Jason";
+	$scope.test = "Kurt is a weenie";
 };
 
 module.exports = {
