@@ -1,0 +1,25 @@
+{
+  "name": "money",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "napa"
+  },
+  "author": "Jason Hamm",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^4.2.1",
+    "gulp": "^3.8.6",
+    "gulp-connect": "^2.0.6",
+    "napa": "^0.4.1",
+    "vinyl-source-stream": "^0.1.1"
+  },
+  "napa": {
+    "angular": "angular/bower-angular",
+    "angular-route": "angular/bower-angular-route"
+  },
+  "dependencies": {
+    "express": "^4.10.1"
+  }
+}
