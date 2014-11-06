@@ -1,7 +1,7 @@
 var config = function($routeProvider) {
 	$routeProvider.when('/', {
 		controller: 'usersController',
-		templateUrl: 'app/user/users.html'
+		templateUrl: 'app/js/user/users.html'
 	});
 };
 
