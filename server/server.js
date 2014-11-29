@@ -1,13 +1,22 @@
 var express = require('express');
 var user = require('./routes/user.js');
+var team = require('./routes/team.js');
 
 var app = express();
-var PORT = 9000;
+var PORT = process.env.PORT;
+
+app.get('/', function(req,res) {
+  res.sendFile('/index.html', {root: __dirname});
+});
+
+app.use(express.static(__dirname + '/build'));
 
 app.get('/users/:userId', user.getUser);
 app.get('/users', user.getUsers);
 app.post('/users', user.createUser);
 
-app.listen(PORT, function() {
+app.get('/teams', team.getTeams);
+
+app.listen(PORT, process.env.IP,function() {
 	console.log("Listening on port " + PORT);
 });
