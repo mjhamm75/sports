@@ -1,4 +1,4 @@
-require('angular-route/angular-route');
+require('angular-route');
 
 var usersModule = angular.module('users', ['ngRoute']);
 

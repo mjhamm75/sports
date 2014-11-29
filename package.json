@@ -18,10 +18,6 @@
     "scripts": {
         "start": "gulp watch && nodemon server/server.js"
     },
-    "napa": {
-        "angular": "angular/bower-angular",
-        "angular-route": "angular/bower-angular-route"
-    },
     "dependencies": {
         "browserify-shim": "^3.8.0",
         "express": "^4.10.1"
