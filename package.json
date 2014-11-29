@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "napa"
+    "install": "napa",
+    "start":"gulp watch & nodemon server/server.js"
   },
   "author": "Jason Hamm",
   "license": "ISC",
