@@ -3,10 +3,6 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "install": "napa",
-    "start":"gulp watch & nodemon server/server.js"
-  },
   "author": "Jason Hamm",
   "license": "ISC",
   "devDependencies": {
