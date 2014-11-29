@@ -16,7 +16,8 @@
         "vinyl-source-stream": "^0.1.1"
     },
     "scripts": {
-        "start": "gulp watch && nodemon server/server.js"
+        "start": "gulp watch && nodemon server/server.js",
+        "postinstall": "node node_modules/gulp/bin/gulp build"
     },
     "dependencies": {
         "browserify-shim": "^3.8.0",
