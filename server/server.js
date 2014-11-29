@@ -7,7 +7,7 @@ var PORT = process.env.PORT || 5050;
 var dirname = process.env.PWD || __dirname;
 
 app.get('/', function(req,res) {
-  res.sendFile('/index.html', {root: dirname});
+  res.sendFile('/index.html');
 });
 
 app.use(express.static(dirname + '/build'));
