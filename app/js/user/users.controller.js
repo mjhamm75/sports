@@ -5,8 +5,23 @@ var config = function($routeProvider) {
 	});
 };
 
-var controller = function($scope){
+var controller = function($scope, $http){
 	$scope.test = "Kurt is a weenie";
+	$http.get('/users')
+	.success(function(data, status) {
+		$scope.users = data;
+	})
+	.error(function(data, status) {
+		console.log(status);
+	});
+	
+	$http.get('/teams')
+	.success(function(data, status) {
+		$scope.teams = data;
+	})
+	.error(function(data, status) {
+		console.log(status);
+	});
 };
 
 module.exports = {
