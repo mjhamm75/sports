@@ -6,5 +6,5 @@ gulp.task('browserify', function() {
 	return browserify('./app/js/app.js')
 		 .bundle({debug: true})
 		.pipe(source('bundle.js'))
-		.pipe(gulp.dest('./build'));
+		.pipe(gulp.dest('./server/build'));
 });
