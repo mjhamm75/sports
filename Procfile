@@ -1,1 +1,1 @@
-web: gulp browserify && gulp less && gulp html && nodemon server/server.js
+web: gulp browserify && gulp html && nodemon server/server.js
