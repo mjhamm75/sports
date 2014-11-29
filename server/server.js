@@ -4,7 +4,11 @@ var team = require('./routes/team.js');
 
 var app = express();
 var PORT = process.env.PORT || 5050;
-var dirname = process.cwd() || __dirname;
+var dirname = __dirname;
+
+app.get('/dirname', function(req, res) {
+    res.send(dirname);
+})
 
 app.get('/', function(req,res) {
   res.sendFile('/index.html', {root: dirname});
