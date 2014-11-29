@@ -14,6 +14,9 @@ app.get('/', function(req,res) {
   res.sendFile('/index.html', {root: dirname});
 });
 
+app.get('/buildDir', function(req, res) {
+    res.send(dirname + '/build');
+})
 app.use(express.static(dirname + '/build'));
 
 app.get('/users/:userId', user.getUser);
