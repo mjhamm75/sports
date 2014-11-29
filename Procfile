@@ -1,1 +1,1 @@
-web: npm install && gulp build && nodemon server/server.js
+web: nodemon server/server.js
