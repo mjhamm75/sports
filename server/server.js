@@ -3,7 +3,7 @@ var user = require('./routes/user.js');
 var team = require('./routes/team.js');
 
 var app = express();
-var PORT = process.env.PORT;
+var PORT = process.env.PORT || 5050;
 
 app.get('/', function(req,res) {
   res.sendFile('/index.html', {root: __dirname});
