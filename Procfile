@@ -1,1 +1,1 @@
-web: node node_modules/gulp/bin/gulp build && nodemon server/server.js
+web: node node_modules/gulp/bin/gulp browserify && node node_modules/gulp/bin/gulp less && node node_modules/gulp/bin/gulp html && nodemon server/server.js
