@@ -4,12 +4,13 @@ var team = require('./routes/team.js');
 
 var app = express();
 var PORT = process.env.PORT || 5050;
+var dirname = process.env.PWD || __dirname;
 
 app.get('/', function(req,res) {
-  res.sendFile('/index.html', {root: __dirname});
+  res.sendFile('/index.html', {root: dirname});
 });
 
-app.use(express.static(__dirname + '/build'));
+app.use(express.static(dirname + '/build'));
 
 app.get('/users/:userId', user.getUser);
 app.get('/users', user.getUsers);
