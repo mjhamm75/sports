@@ -1,4 +1,4 @@
-require('angular/angular');
+var angular = require('angular');
 
 require('./user/users.module.js');
 
