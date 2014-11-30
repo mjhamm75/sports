@@ -8,6 +8,10 @@
   "scripts": {
     "start": "gulp watch && nodemon server/server.js"
   },
+  "engines": {
+    "node": "0.10.33",
+    "npm": "1.4.28"
+  },
   "dependencies": {
     "angular": "^1.3.4",
     "angular-route": "^1.3.4",
