@@ -6,7 +6,7 @@
   "author": "Jason Hamm",
   "license": "ISC",
   "scripts": {
-    "start": "gulp watch && nodemon server/server.js",
+    "start": "gulp watch && nodemon /server.js",
     "postinstall": "gulp build"
   },
   "engines": {
