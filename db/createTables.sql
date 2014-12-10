@@ -114,9 +114,9 @@ CREATE TABLE groups (
     description text  NULL,
     from_age int  NULL,
     to_age int  NULL,
-    join_fee int  NULL,
-    monthly_fee int  NULL,
-    annual_fee int  NULL,
+    join_fee money  NULL,
+    monthly_fee money  NULL,
+    annual_fee money  NULL,
     CONSTRAINT groups_pk PRIMARY KEY (id)
 );
 

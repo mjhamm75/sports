@@ -1,7 +1,7 @@
 INSERT INTO activity_types(id, name, description)
     
-    VALUES  (?, ?, ?)
-            (?, ?, ?);
+    VALUES  (1, 'Tball', 'Appropriate for ages 5-9' ),
+            (2, 'Soccer', 'Soccer');
 
 
 
@@ -31,7 +31,11 @@ INSERT INTO contact_info(id, email, phone, zipcode)
     VALUES  (1, 'kc@hotmail.com','555-555-5555', '84010'),
             (2, 'bc@hotmail.com','555-555-5555', '84010'),
             (3, 'jh@hotmail.com','777-555-5555', '84095'),
-            (4, 'kh@hotmail.com','777-555-5555', '84095');
+            (4, 'kh@hotmail.com','777-555-5555', '84095'),
+            (5, 'wt@hotmail.com','666-555-5555', '84010'),
+            (6, 'sj@hotmail.com','999-555-5555', '84095'),
+            (7, 'bj@hotmail.com','999-555-5555', '84095'),
+            (8, 'jj@hotmail.com','999-555-5555', '84095');
     
     
     
@@ -65,7 +69,9 @@ INSERT INTO group_events(group_id, event_id)
 INSERT INTO groups(id, activity_type_id, name, location, logo, description, from_age, to_age, 
             join_fee, monthly_fee, annual_fee)
 
-    VALUES  (1, 1, 'Bears', 'Bountiful', null, 'Tball maniacs', 6, 8, null, null, null);
+    VALUES  (1, 1, 'Bears', 'Bountiful', null, 'Tball maniacs', 6, 8, null, null, null),
+            (2, 1, 'White Sox', 'South Jordan', null, 'Seasonal Tball team', 6, 8, null, null, 35),
+            (3, 2, 'Wildcats', 'South Jordan', null, 'fierce soccer', 5, 7, 25, null, null);
 
 
 
@@ -85,7 +91,8 @@ INSERT INTO parent_children(parent_id, child_id)
 INSERT INTO responsibility_types(id, name)
     
     VALUES  (1, 'Equipment'),
-            (1, 'Refreshments');
+            (2, 'Refreshments'),
+            (3, 'Transportation');
 
 
 
