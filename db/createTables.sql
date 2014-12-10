@@ -11,7 +11,7 @@
 CREATE TABLE activity_types (
     id serial  NOT NULL,
     name varchar(200)  NOT NULL,
-    description text  NOT NULL,
+    description text,
     CONSTRAINT activity_types_pk PRIMARY KEY (id)
 );
 
@@ -112,7 +112,8 @@ CREATE TABLE groups (
     location varchar(255)  NULL,
     logo bytea  NULL,
     description text  NULL,
-    age_range int  NULL,
+    from_age int  NULL,
+    to_age int  NULL,
     join_fee int  NULL,
     monthly_fee int  NULL,
     annual_fee int  NULL,
@@ -203,7 +204,7 @@ CREATE TABLE users (
     id serial  NOT NULL,
     first_name varchar(50)  NOT NULL,
     last_name varchar(50)  NOT NULL,
-    gender int  NULL,
+    gender varchar(50)  NULL,
     dob date  NULL,
     bio text  NULL,
     pic bytea  NULL,
