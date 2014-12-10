@@ -14,8 +14,10 @@ INSERT INTO competition_groups(group_id, competition_id, is_winner, score, start
     
 INSERT INTO competition_types(id, name)
 
-    VALUES  (?, ?)
-            (?, ?);
+    VALUES  (1, 'Game'),
+            (2, 'Tournament'),
+            (3, 'Match'),
+            (4, 'Competition');
 
 
 
@@ -41,28 +43,31 @@ INSERT INTO contact_info(id, email, phone, zipcode)
     
 INSERT INTO event_responsibilities(event_id, responsibility_type_id, user_id, details)
     
-    VALUES  (?, ?, ?, ?)
-            (?, ?, ?, ?);
+    VALUES  (?, ?, ?, ?);
     
     
     
 INSERT INTO event_types(id, name, description)
 
-    VALUES  (?, ?, ?)
-            (?, ?, ?);
-    
+    VALUES  (1, 'Meetup', 'Discuss team strategy and logistics'),
+            (2, 'Competition', 'Compete against an opposing team'),
+            (3, 'Party', 'Celebrate something...');
     
     
 INSERT INTO events(id, location_id, event_type_id, date, start_time, end_time, description)
 
-    VALUES  (?, ?, ?, ?, ?, ?, ?)
-            (?, ?, ?, ?, ?, ?, ?);
+    VALUES  (1, 1, 1, '2014-12-20', '18:00', '20:00', 'Last Tball game of the season'),
+            (2, 2, 3, '2014-12-23', '17:30', '20:00', 'Rec center Christmas celebration');
     
     
     
 INSERT INTO group_events(group_id, event_id)
 
-    VALUES  (?, ?);
+    VALUES  (1, 1),
+            (2, 1),
+            (1, 2),
+            (2, 2),
+            (3, 2);
     
     
     
@@ -98,7 +103,10 @@ INSERT INTO responsibility_types(id, name)
 
 INSERT INTO roles(id, name)
     
-    VALUES  (?, ?);
+    VALUES  (1, 'Coach'),
+            (2, 'Assistant Coach'),
+            (3, 'Referee'),
+            (4, 'Competitor');
 
             
 
