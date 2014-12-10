@@ -5,26 +5,32 @@ INSERT INTO activity_types(id, name, description)
 
 
 
-INSERT INTO competition_groups(group_id, competition_id, is_winner, score, start_time, end_time)
-    
-    VALUES  (?, ?, ?, ?, ?, ?)
-            (?, ?, ?, ?, ?, ?);
-    
- 
-    
 INSERT INTO competition_types(id, name)
 
     VALUES  (1, 'Game'),
             (2, 'Tournament'),
             (3, 'Match'),
             (4, 'Competition');
+            
+            
+            
+INSERT INTO events(id, location_id, event_type_id, date, start_time, end_time, description)
 
+    VALUES  (1, 1, 1, '2014-12-20', '18:00', '20:00', 'Last Tball game of the season'),
+            (2, 2, 3, '2014-12-23', '17:30', '20:00', 'Rec center Christmas celebration');            
+            
+            
 
-
-INSERT INTO competitions(id, event_id, competition_type_id)
+INSERT INTO competitions(id, event_id, competition_type_id, start_time, end_time)
     
-    VALUES  (?, ?, ?)
-            (?, ?, ?);
+    VALUES  (1, 1, 1, '18:00', null);
+    
+    
+    
+INSERT INTO competition_groups(group_id, competition_id, is_winner, score)
+    
+    VALUES  (1, 1, true, 3),
+            (2, 1, false, 2);
 
 
 
@@ -41,33 +47,19 @@ INSERT INTO contact_info(id, email, phone, zipcode)
     
     
     
-INSERT INTO event_responsibilities(event_id, responsibility_type_id, user_id, details)
-    
-    VALUES  (?, ?, ?, ?);
-    
-    
-    
 INSERT INTO event_types(id, name, description)
 
     VALUES  (1, 'Meetup', 'Discuss team strategy and logistics'),
             (2, 'Competition', 'Compete against an opposing team'),
             (3, 'Party', 'Celebrate something...');
     
+            
+            
+INSERT INTO event_responsibilities(event_id, responsibility_type_id, user_id, details)
     
-INSERT INTO events(id, location_id, event_type_id, date, start_time, end_time, description)
-
-    VALUES  (1, 1, 1, '2014-12-20', '18:00', '20:00', 'Last Tball game of the season'),
-            (2, 2, 3, '2014-12-23', '17:30', '20:00', 'Rec center Christmas celebration');
-    
-    
-    
-INSERT INTO group_events(group_id, event_id)
-
-    VALUES  (1, 1),
-            (2, 1),
-            (1, 2),
-            (2, 2),
-            (3, 2);
+    VALUES  (2, 1, 1, 'Bring dunking booth'),
+            (2, 2, 3, 'Soda'),
+            (2, 3, 6, 'Bring kids from school');            
     
     
     
@@ -77,12 +69,20 @@ INSERT INTO groups(id, activity_type_id, name, location, logo, description, from
     VALUES  (1, 1, 'Bears', 'Bountiful', null, 'Tball maniacs', 6, 8, null, null, null),
             (2, 1, 'White Sox', 'South Jordan', null, 'Seasonal Tball team', 6, 8, null, null, 35),
             (3, 2, 'Wildcats', 'South Jordan', null, 'fierce soccer', 5, 7, 25, null, null);
+            
+INSERT INTO group_events(group_id, event_id)
+
+    VALUES  (1, 1),
+            (2, 1),
+            (1, 2),
+            (2, 2),
+            (3, 2);
 
 
 
 INSERT INTO locations(id, name, street_address, city, state_id, zipcode, coordinates)
     
-    VALUES  (1, 'Rocket Park', '100 North 1300 East', 'Bountiful', 44, 84010, null)
+    VALUES  (1, 'Rocket Park', '100 North 1300 East', 'Bountiful', 44, 84010, null),
             (2, 'South Jordan City Park', '11000 Redwood Road', 'South Jordan', 44, 84095, null);
             
             
@@ -113,7 +113,14 @@ INSERT INTO roles(id, name)
 INSERT INTO user_roles(
             role_id, group_id, user_id, description)
     
-    VALUES  (?, ?, ?, ?);
+    VALUES  (1, 1, 5, null),
+            (2, 1, 1, null),
+            (4, 1, 2, null),
+            (1, 2, 3, null),
+            (4, 2, 4, null),
+            (2, 3, 6, null),
+            (4, 3, 7, null),
+            (4, 3, 8, null);
     
     
 
