@@ -1,3 +1,39 @@
+-- SEEDING ALL TABLES
+
+INSERT INTO contact_info(id, email, phone, zipcode)
+    
+    VALUES  (1, 'kc@hotmail.com','555-555-5555', '84010'),
+            (2, 'bc@hotmail.com','555-555-5555', '84010'),
+            (3, 'jh@hotmail.com','777-555-5555', '84095'),
+            (4, 'kh@hotmail.com','777-555-5555', '84095'),
+            (5, 'wt@hotmail.com','666-555-5555', '84010'),
+            (6, 'sj@hotmail.com','999-555-5555', '84095'),
+            (7, 'bj@hotmail.com','999-555-5555', '84095'),
+            (8, 'jj@hotmail.com','999-555-5555', '84095');
+
+
+
+INSERT INTO event_types(id, name, description)
+
+    VALUES  (1, 'Meetup', 'Discuss team strategy and logistics'),
+            (2, 'Competition', 'Compete against an opposing team'),
+            (3, 'Party', 'Celebrate something...');
+            
+
+
+INSERT INTO users(id, first_name, last_name, gender, dob, bio, pic, contact_info_id)
+    
+    VALUES  (1, 'Kurt', 'Corbett', 'm', '1985-11-20', 'I love beans', null, 1),
+            (2, 'Bobby', 'Corbett', 'm', '2008-01-29', 'I love pinto beans', null, 2),
+            (3, 'Jason', 'Hamm', 'm', '1975-01-20', 'I am stinky', null, 3),
+            (4, 'Kaleck', 'Hamm', 'm', '2000-05-29', 'Boom Shakalaca', null, 4),
+            (5, 'William', 'Temple', 'm', '1958-03-20', 'Baseball Coach for life', null, 5),
+            (6, 'Sarah', 'Johnson', 'f', '1982-08-14', 'mom of two', null, 6),
+            (7, 'Billy', 'Johnson', 'm', '2009-02-20', 'I eat grass', null, 7),
+            (8, 'Jenny', 'Johnson', 'f', '2008-05-29', 'I love soccer', null, 8);
+
+
+
 INSERT INTO activity_types(id, name, description)
     
     VALUES  (1, 'Tball', 'Appropriate for ages 5-9' ),
@@ -12,132 +48,7 @@ INSERT INTO competition_types(id, name)
             (3, 'Match'),
             (4, 'Competition');
             
-            
-            
-INSERT INTO events(id, location_id, event_type_id, date, start_time, end_time, description)
 
-    VALUES  (1, 1, 1, '2014-12-20', '18:00', '20:00', 'Last Tball game of the season'),
-            (2, 2, 3, '2014-12-23', '17:30', '20:00', 'Rec center Christmas celebration');            
-            
-            
-
-INSERT INTO competitions(id, event_id, competition_type_id, start_time, end_time)
-    
-    VALUES  (1, 1, 1, '18:00', null);
-    
-    
-    
-INSERT INTO competition_groups(group_id, competition_id, is_winner, score)
-    
-    VALUES  (1, 1, true, 3),
-            (2, 1, false, 2);
-
-
-
-INSERT INTO contact_info(id, email, phone, zipcode)
-    
-    VALUES  (1, 'kc@hotmail.com','555-555-5555', '84010'),
-            (2, 'bc@hotmail.com','555-555-5555', '84010'),
-            (3, 'jh@hotmail.com','777-555-5555', '84095'),
-            (4, 'kh@hotmail.com','777-555-5555', '84095'),
-            (5, 'wt@hotmail.com','666-555-5555', '84010'),
-            (6, 'sj@hotmail.com','999-555-5555', '84095'),
-            (7, 'bj@hotmail.com','999-555-5555', '84095'),
-            (8, 'jj@hotmail.com','999-555-5555', '84095');
-    
-    
-    
-INSERT INTO event_types(id, name, description)
-
-    VALUES  (1, 'Meetup', 'Discuss team strategy and logistics'),
-            (2, 'Competition', 'Compete against an opposing team'),
-            (3, 'Party', 'Celebrate something...');
-    
-            
-            
-INSERT INTO event_responsibilities(event_id, responsibility_type_id, user_id, details)
-    
-    VALUES  (2, 1, 1, 'Bring dunking booth'),
-            (2, 2, 3, 'Soda'),
-            (2, 3, 6, 'Bring kids from school');            
-    
-    
-    
-INSERT INTO groups(id, activity_type_id, name, location, logo, description, from_age, to_age, 
-            join_fee, monthly_fee, annual_fee)
-
-    VALUES  (1, 1, 'Bears', 'Bountiful', null, 'Tball maniacs', 6, 8, null, null, null),
-            (2, 1, 'White Sox', 'South Jordan', null, 'Seasonal Tball team', 6, 8, null, null, 35),
-            (3, 2, 'Wildcats', 'South Jordan', null, 'fierce soccer', 5, 7, 25, null, null);
-            
-INSERT INTO group_events(group_id, event_id)
-
-    VALUES  (1, 1),
-            (2, 1),
-            (1, 2),
-            (2, 2),
-            (3, 2);
-
-
-
-INSERT INTO locations(id, name, street_address, city, state_id, zipcode, coordinates)
-    
-    VALUES  (1, 'Rocket Park', '100 North 1300 East', 'Bountiful', 44, 84010, null),
-            (2, 'South Jordan City Park', '11000 Redwood Road', 'South Jordan', 44, 84095, null);
-            
-            
-            
-INSERT INTO parent_children(parent_id, child_id)
-    
-    VALUES  (1, 2);
-
-
-
-INSERT INTO responsibility_types(id, name)
-    
-    VALUES  (1, 'Equipment'),
-            (2, 'Refreshments'),
-            (3, 'Transportation');
-
-
-
-INSERT INTO roles(id, name)
-    
-    VALUES  (1, 'Coach'),
-            (2, 'Assistant Coach'),
-            (3, 'Referee'),
-            (4, 'Competitor');
-
-            
-
-INSERT INTO user_roles(
-            role_id, group_id, user_id, description)
-    
-    VALUES  (1, 1, 5, null),
-            (2, 1, 1, null),
-            (4, 1, 2, null),
-            (1, 2, 3, null),
-            (4, 2, 4, null),
-            (2, 3, 6, null),
-            (4, 3, 7, null),
-            (4, 3, 8, null);
-    
-    
-
-INSERT INTO users(id, first_name, last_name, gender, dob, bio, pic, contact_info_id)
-    
-    VALUES  (1, 'Kurt', 'Corbett', 'm', '1985-11-20', 'I love beans', null, 1),
-            (2, 'Bobby', 'Corbett', 'm', '2008-01-29', 'I love pinto beans', null, 2),
-            (3, 'Jason', 'Hamm', 'm', '1975-01-20', 'I am stinky', null, 3),
-            (4, 'Kaleck', 'Hamm', 'm', '2000-05-29', 'Boom Shakalaca', null, 4),
-            (5, 'William', 'Temple', 'm', '1958-03-20', 'Baseball Coach for life', null, 5),
-            (6, 'Sarah', 'Johnson', 'f', '1982-08-14', 'mom of two', null, 6),
-            (7, 'Billy', 'Johnson', 'm', '2009-02-20', 'I eat grass', null, 7),
-            (8, 'Jenny', 'Johnson', 'f', '2008-05-29', 'I love soccer', null, 8);
-
-    
-
--- INSERT ALL STATES
 
 INSERT INTO states (id,name,abbreviation,country,type,sort,status,occupied,notes,fips_state,assoc_press,standard_federal_region,census_region,census_region_name,census_division,census_division_name,circuit_court) VALUES ('1','Alabama','AL','USA','states','10','current','occupied','','1','Ala.','IV','3','South','6','East South Central','11');
 INSERT INTO states (id,name,abbreviation,country,type,sort,status,occupied,notes,fips_state,assoc_press,standard_federal_region,census_region,census_region_name,census_division,census_division_name,circuit_court) VALUES ('2','Alaska','AK','USA','states','10','current','occupied','','2','Alaska','X','4','West','9','Pacific','9');
@@ -198,12 +109,91 @@ INSERT INTO states (id,name,abbreviation,country,type,sort,status,occupied,notes
 
 
 
+INSERT INTO locations(id, name, street_address, city, state_id, zipcode, coordinates)
+    
+    VALUES  (1, 'Rocket Park', '100 North 1300 East', 'Bountiful', 44, 84010, null),
+            (2, 'South Jordan City Park', '11000 Redwood Road', 'South Jordan', 44, 84095, null);
+            
 
-          
 
+INSERT INTO roles(id, name)
+    
+    VALUES  (1, 'Coach'),
+            (2, 'Assistant Coach'),
+            (3, 'Referee'),
+            (4, 'Competitor');
+
+
+
+INSERT INTO responsibility_types(id, name)
+    
+    VALUES  (1, 'Equipment'),
+            (2, 'Refreshments'),
+            (3, 'Transportation');
+   
+   
+            
+INSERT INTO events(id, location_id, event_type_id, date, start_time, end_time, description)
+
+    VALUES  (1, 1, 1, '2014-12-20', '18:00', '20:00', 'Last Tball game of the season'),
+            (2, 2, 3, '2014-12-23', '17:30', '20:00', 'Rec center Christmas celebration');            
+            
+
+
+INSERT INTO competitions(id, event_id, competition_type_id, start_time, end_time)
+    
+    VALUES  (1, 1, 1, '18:00', null);
     
     
     
+INSERT INTO groups(id, activity_type_id, name, location, logo, description, from_age, to_age, 
+            join_fee, monthly_fee, annual_fee)
 
+    VALUES  (1, 1, 'Bears', 'Bountiful', null, 'Tball maniacs', 6, 8, null, null, null),
+            (2, 1, 'White Sox', 'South Jordan', null, 'Seasonal Tball team', 6, 8, null, null, 35),
+            (3, 2, 'Wildcats', 'South Jordan', null, 'fierce soccer', 5, 7, 25, null, null);
+    
+    
+    
+INSERT INTO competition_groups(group_id, competition_id, is_winner, score)
+    
+    VALUES  (1, 1, true, 3),
+            (2, 1, false, 2);
 
+            
+            
+INSERT INTO event_responsibilities(event_id, responsibility_type_id, user_id, details)
+    
+    VALUES  (2, 1, 1, 'Bring dunking booth'),
+            (2, 2, 3, 'Soda'),
+            (2, 3, 6, 'Bring kids from school');            
+    
+    
+            
+INSERT INTO group_events(group_id, event_id)
 
+    VALUES  (1, 1),
+            (2, 1),
+            (1, 2),
+            (2, 2),
+            (3, 2);
+
+            
+            
+INSERT INTO parent_children(parent_id, child_id)
+    
+    VALUES  (1, 2);
+
+            
+
+INSERT INTO user_roles(
+            role_id, group_id, user_id, description)
+    
+    VALUES  (1, 1, 5, null),
+            (2, 1, 1, null),
+            (4, 1, 2, null),
+            (1, 2, 3, null),
+            (4, 2, 4, null),
+            (2, 3, 6, null),
+            (4, 3, 7, null),
+            (4, 3, 8, null);
