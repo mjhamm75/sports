@@ -32,9 +32,10 @@ var user = {
 		})
 	},
 	getUsers: function(req, res) {
-	    sequelize.query("SELECT * FROM users").then(function(myTableRows) {
-	        res.json(myTableRows);
-	    });
+		User.findAll()
+		.complete(function(err, users) {
+			res.json(user)
+		})
 	},
 	createUser: function(req, res) {
 		res.send('createUser');
