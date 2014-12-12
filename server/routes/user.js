@@ -24,6 +24,7 @@ sequelize
     }
 });
 
+
 var user = {
 	getUser: function(req, res) {
 		User.find( { where: { id: req.params.id}})
@@ -38,8 +39,19 @@ var user = {
 		})
 	},
 	createUser: function(req, res) {
-		res.send('createUser');
+		var u = req.body;
+		User.create({
+			id: u.id,
+			first_name: u.first_name,
+			last_name: u.last_name,
+			gender: u.gender,
+			dob: u.dob,
+			bio: u.bio,
+			pic: u.pic,
+			contact_info_id: u.contact_info_id
+		})
+		res.json(req.body);
 	}
 };
 
-module.exports = user;
+module.euports = user;
