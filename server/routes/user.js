@@ -32,8 +32,8 @@ var user = {
 		})
 	},
 	getUsers: function(req, res) {
-		User.findAll()
-		.then(function(err, users) {
+		User.first_name.find( { where: {id: '1'} })
+		.complete(function(err, users) {
 			res.json(users)
 		})
 	},
