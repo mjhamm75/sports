@@ -13,7 +13,7 @@ app.get('/', function(req,res) {
   res.sendFile('/index.html', {root: __dirname});
 });
 
-app.get('/users/:userId', user.getUser);
+app.get('/users/:id', user.getUser);
 app.get('/users', user.getUsers);
 app.post('/users', user.createUser);
 app.get('/teams', team.getTeams);
