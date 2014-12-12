@@ -12,7 +12,7 @@ var sequelize = new Sequelize(match[5], match[1], match[2], {
 
 
 
-module.exports = function(sequelize, DataTypes) {
+var User = function(sequelize, DataTypes) {
   
   return sequelize.define("User", {
       id: {
@@ -44,3 +44,5 @@ module.exports = function(sequelize, DataTypes) {
       tableName: "users"
     });
 }
+
+module.exports = User;
