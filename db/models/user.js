@@ -39,7 +39,8 @@ var User =  sequelize.define("User", {
         type: Sequelize.INTEGER
       }
     }, {
-      tableName: "users"
+      tableName: "users",
+      timestamps: false
     });
 
 
