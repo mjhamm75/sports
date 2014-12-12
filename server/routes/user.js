@@ -39,18 +39,18 @@ var user = {
 		})
 	},
 	createUser: function(req, res) {
-		var u = req.body;
-		User.create({
-			id: u.id,
-			first_name: u.first_name,
-			last_name: u.last_name,
-			gender: u.gender,
-			dob: u.dob,
-			bio: u.bio,
-			pic: u.pic,
-			contact_info_id: u.contact_info_id
-		})
-		res.json(req.body);
+		// var u = req.body;
+		// User.create({
+		// 	id: u.id,
+		// 	first_name: u.first_name,
+		// 	last_name: u.last_name,
+		// 	gender: u.gender,
+		// 	dob: u.dob,
+		// 	bio: u.bio,
+		// 	pic: u.pic,
+		// 	contact_info_id: u.contact_info_id
+		// })
+		// res.json(req.body);
 	}
 };
 
