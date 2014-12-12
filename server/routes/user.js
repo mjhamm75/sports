@@ -26,7 +26,7 @@ sequelize
 
 var user = {
 	getUser: function(req, res) {
-		User.find( { where: { id: req.params.id}})
+		User.find( { where: { id: req.params.userid}})
 		.complete(function(err, users) {
 			res.json(users)
 		})
