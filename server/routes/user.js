@@ -1,17 +1,17 @@
 var data = require('./../mock-data/user.js');
 var User = require('../../db/models/user.js');
 
-var Sequelize = require('sequelize')
+var Sequelize = require('sequelize');
 
-var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
+var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
  
-    var sequelize = new Sequelize(match[5], match[1], match[2], {
-      dialect:  'postgres',
-      protocol: 'postgres',
-      port:     match[4],
-      host:     match[3],
-      logging:  console.log
-    })
+var sequelize = new Sequelize(match[5], match[1], match[2], {
+  dialect:  'postgres',
+  protocol: 'postgres',
+  port:     match[4],
+  host:     match[3],
+  logging:  console.log
+})
 
     
 sequelize
@@ -28,13 +28,13 @@ var user = {
 	getUser: function(req, res) {
 		User.findAll()
 		.complete(function(err, users) {
-			res.json(user)
+			res.json(users)
 		})
 	},
 	getUsers: function(req, res) {
 		User.findAll()
-		.complete(function(err, users) {
-			res.json(user)
+		.then(function(err, users) {
+			res.json(users)
 		})
 	},
 	createUser: function(req, res) {

@@ -1,8 +1,15 @@
-var Sequelize = require('sequelize')
-  , sequelize = new Sequelize('sports', 'postgres', 'postgres', {
-      dialect: "postgres", // or 'sqlite', 'postgres', 'mariadb'
-      port:    3306, // or 5432 (for postgres)
-    });
+var Sequelize = require('sequelize');
+
+// var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
+ 
+// var sequelize = new Sequelize(match[5], match[1], match[2], {
+//   dialect:  'postgres',
+//   protocol: 'postgres',
+//   port:     match[4],
+//   host:     match[3],
+//   logging:  console.log
+// })
+
 
 
 module.exports = function(sequelize, DataTypes) {
