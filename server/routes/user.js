@@ -26,13 +26,13 @@ sequelize
 
 var user = {
 	getUser: function(req, res) {
-		User.findAll()
+		User.find( { where: { id: req.params}})
 		.complete(function(err, users) {
 			res.json(users)
 		})
 	},
 	getUsers: function(req, res) {
-		User.find( { where: {id: '1'} })
+		User.findAll()
 		.complete(function(err, users) {
 			res.json(users)
 		})
