@@ -1,14 +1,14 @@
 var Sequelize = require('sequelize');
 
-// var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
+var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
  
-// var sequelize = new Sequelize(match[5], match[1], match[2], {
-//   dialect:  'postgres',
-//   protocol: 'postgres',
-//   port:     match[4],
-//   host:     match[3],
-//   logging:  console.log
-// })
+var sequelize = new Sequelize(match[5], match[1], match[2], {
+  dialect:  'postgres',
+  protocol: 'postgres',
+  port:     match[4],
+  host:     match[3],
+  logging:  console.log
+})
 
 
 
