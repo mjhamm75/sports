@@ -12,37 +12,35 @@ var sequelize = new Sequelize(match[5], match[1], match[2], {
 
 
 
-var User = function(sequelize, DataTypes) {
-  
-  return sequelize.define("User", {
+var User =  sequelize.define("User", {
       id: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         primaryKey: true
       },
       first_name: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       last_name: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       gender: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       dob: {
-        type: DataTypes.DATE
+        type: Sequelize.DATE
       },
       bio: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       pic: {
-        type: DataTypes.BLOB
+        type: Sequelize.BLOB
       },
       contact_info_id: {
-        type: DataTypes.INTEGER
+        type: Sequelize.INTEGER
       }
     }, {
       tableName: "users"
     });
-}
+
 
 module.exports = User;
