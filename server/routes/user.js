@@ -32,7 +32,7 @@ var user = {
 		})
 	},
 	getUsers: function(req, res) {
-		User.first_name.find( { where: {id: '1'} })
+		User.find( { where: {id: '1'} })
 		.complete(function(err, users) {
 			res.json(users)
 		})
