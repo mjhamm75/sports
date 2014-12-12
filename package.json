@@ -9,6 +9,9 @@
     "start": "gulp watch && nodemon /server.js",
     "postinstall": "gulp build"
   },
+  "production": {
+  "use_env_variable": "HEROKU_POSTGRESQL_OLIVE_URL"
+  },
   "engines": {
     "node": "0.10.33",
     "npm": "1.4.28"
