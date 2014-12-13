@@ -1,7 +1,6 @@
 if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
     , sequelize = null
-    , user = require('./models/user.js')
  
   if (process.env.HEROKU_POSTGRESQL_OLIVE_URL) {
     // the application is executed on Heroku ... use the postgres database
@@ -40,7 +39,7 @@ if (!global.hasOwnProperty('db')) {
   global.db = {
     Sequelize: Sequelize,
     sequelize: sequelize,
-    User:      user
+    User:      require('./models/user.js')
  
     // add your other models here
   }
