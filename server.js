@@ -18,23 +18,6 @@ app.get('/users', user.getUsers);
 app.post('/users', user.createUser);
 app.get('/teams', team.getTeams);
 
-// app.get('/db', function(req, res) {
-//   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//       client.query('SELECT * FROM users', function(err, result) {
-//           done();
-//           if(err) {
-//               console.error(err); res.send("Error " + err)
-//           } else {
-//               res.send(result.rows);
-//           }    
-//       });
-//   });
-    
-// });
-
-
-
-
 
 app.listen(PORT, process.env.IP,function() {
 	console.log("Listening on port " + PORT);
