@@ -32,6 +32,4 @@ var User =  db.sequelize.define("User", {
       timestamps: false
     });
 
-console.log(User);
-
 module.exports = User;
