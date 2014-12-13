@@ -1,42 +1,31 @@
-var Sequelize = require('sequelize');
-
-var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
- 
-var sequelize = new Sequelize(match[5], match[1], match[2], {
-  dialect:  'postgres',
-  protocol: 'postgres',
-  port:     match[4],
-  host:     match[3],
-  logging:  console.log
-})
+var db = require("./index.js");
 
 
-
-var User =  sequelize.define("User", {
+var User =  db.sequelize.define("User", {
       id: {
-        type: Sequelize.INTEGER,
+        type: db.Sequelize.INTEGER,
         primaryKey: true
       },
       first_name: {
-        type: Sequelize.STRING
+        type: db.Sequelize.STRING
       },
       last_name: {
-        type: Sequelize.STRING
+        type: db.Sequelize.STRING
       },
       gender: {
-        type: Sequelize.STRING
+        type: db.Sequelize.STRING
       },
       dob: {
-        type: Sequelize.DATE
+        type: db.Sequelize.DATE
       },
       bio: {
-        type: Sequelize.STRING
+        type: db.Sequelize.STRING
       },
       pic: {
-        type: Sequelize.BLOB
+        type: db.Sequelize.BLOB
       },
       contact_info_id: {
-        type: Sequelize.INTEGER
+        type: db.Sequelize.INTEGER
       }
     }, {
       tableName: "users",
