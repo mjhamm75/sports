@@ -1,4 +1,4 @@
-var db = require("./index.js");
+var db = require("../index.js");
 
 
 var User =  db.sequelize.define("User", {
@@ -32,5 +32,6 @@ var User =  db.sequelize.define("User", {
       timestamps: false
     });
 
+console.log(User);
 
 module.exports = User;
