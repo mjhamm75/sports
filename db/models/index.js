@@ -23,6 +23,16 @@ if (!global.hasOwnProperty('db')) {
         port: 5432
       }
   };
+  
+  sequelize
+  .authenticate()
+  .complete(function(err) {
+      if (err) {
+          console.log('Unable to connect to the database:', err)
+      } else {
+          console.log('Connection has been established successfully.')
+      }
+  });
  
   global.db = {
     Sequelize: Sequelize,
