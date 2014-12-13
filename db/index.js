@@ -1,3 +1,7 @@
+var user = require('./models/user.js');
+
+
+
 if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
     , sequelize = null
@@ -39,7 +43,7 @@ if (!global.hasOwnProperty('db')) {
   global.db = {
     Sequelize: Sequelize,
     sequelize: sequelize,
-    User:      sequelize.import('/models/user.js')
+    User:      user
  
     // add your other models here
   }
