@@ -1,4 +1,4 @@
-var db = require('../../db/user.js');
+var db = require('../../db/index.js');
 
 // var Sequelize = require('sequelize');
 
