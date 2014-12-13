@@ -38,8 +38,7 @@ if (!global.hasOwnProperty('db')) {
  
   global.db = {
     Sequelize: Sequelize,
-    sequelize: sequelize,
-    User:      require('./models/user.js')
+    sequelize: sequelize
  
     // add your other models here
   }
