@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "mpwgblcimtalqt",
+    "password": "J4cMctMLnqe09TgT4b3N-BNOE3",
+    "database": "d7v0htmpq36aim",
+    "host": "ec2-54-243-44-191.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "port": 5432
+  },
+  "production": {
+    "username": "mpwgblcimtalqt",
+    "password": "J4cMctMLnqe09TgT4b3N-BNOE3",
+    "database": "d7v0htmpq36aim",
+    "host": "ec2-54-243-44-191.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "port": 5432
+  }
+}
