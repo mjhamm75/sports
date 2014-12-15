@@ -1,10 +1,10 @@
 if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
-    , sequelize = null
+    , sequelize = null;
  
   if (process.env.HEROKU_POSTGRESQL_OLIVE_URL) {
     // the application is executed on Heroku ... use the postgres database
-    var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
+    var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
  
     sequelize = new Sequelize(match[5], match[1], match[2], {
       dialect:  'postgres',
@@ -12,7 +12,7 @@ if (!global.hasOwnProperty('db')) {
       port:     match[4],
       host:     match[3],
       logging:  console.log
-    })
+    });
   } else {
     // the application is executed on the local machine ... use postgres
     sequelize = new Sequelize(
@@ -21,16 +21,16 @@ if (!global.hasOwnProperty('db')) {
       'postgres'), {
         dialect: "postgres",
         port: 5432
-      }
-  };
+      };
+  }
   
   sequelize
   .authenticate()
   .complete(function(err) {
       if (err) {
-          console.log('Unable to connect to the database:', err)
+          console.log('Unable to connect to the database:', err);
       } else {
-          console.log('Connection has been established successfully.')
+          console.log('Connection has been established successfully.');
       }
   });
   
@@ -39,9 +39,7 @@ if (!global.hasOwnProperty('db')) {
   global.db = {
     Sequelize: Sequelize,
     sequelize: sequelize
- 
-    // add your other models here
-  }
+  };
  
   /*
     Associations can be defined here. E.g. like this:
@@ -49,4 +47,4 @@ if (!global.hasOwnProperty('db')) {
   */
 }
  
-module.exports = global.db
+module.exports = global.db;
