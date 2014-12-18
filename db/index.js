@@ -1,7 +1,7 @@
 if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
     , sequelize = null;
- 
+  
   if (process.env.HEROKU_POSTGRESQL_OLIVE_URL) {
     // the application is executed on Heroku ... use the postgres database
     var match = process.env.HEROKU_POSTGRESQL_OLIVE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
@@ -15,16 +15,20 @@ if (!global.hasOwnProperty('db')) {
     });
   } else {
     // the application is executed on the local machine ... use postgres
-    sequelize = new Sequelize('d7v0htmpq36aim', 'mpwgblcimtalqt', 'J4cMctMLnqe09TgT4b3N-BNOE3', {
-      dialect:  'postgres',
-      protocol: 'postgres',
-      port:     5432,
-      host:     'ec2-54-243-44-191.compute-1.amazonaws.com',
-      logging:  console.log
-    });
+    
+    sequelize = new Sequelize('postgres://mpwgblcimtalqt:J4cMctMLnqe09TgT4b3N-BNOE3@ec2-54-243-44-191.compute-1.amazonaws.com:5432/d7v0htmpq36aim', {
+  // Look to the next section for possible options
+})
+    // sequelize = new Sequelize('d7v0htmpq36aim', 'mpwgblcimtalqt', 'J4cMctMLnqe09TgT4b3N-BNOE3', {
+    //   dialect:  'postgres',
+    //   protocol: 'postgres',
+    //   port:     5432,
+    //   host:     'ec2-54-243-44-191.compute-1.amazonaws.com',
+    //   logging:  console.log
+    // });
   }
   
-  console.log(process.env);
+
   
   sequelize
   .authenticate()
@@ -50,3 +54,5 @@ if (!global.hasOwnProperty('db')) {
 }
  
 module.exports = global.db;
+
+console.log(global.db.sequelize);
