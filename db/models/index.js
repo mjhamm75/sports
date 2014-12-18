@@ -1,14 +1,32 @@
 "use strict";
 
-console.log("beans")
 var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
 var env       = process.env.NODE_ENV || "development";
 var config    = require(__dirname + '/../config/config.json')[env];
-var sequelize = new Sequelize('postgres://mpwgblcimtalqt:J4cMctMLnqe09TgT4b3N-BNOE3@ec2-54-243-44-191.compute-1.amazonaws.com:5432/d7v0htmpq36aim', {
-                    dialect: 'postgres'});
+var sequelize = new Sequelize('d7v0htmpq36aim', 'mpwgblcimtalqt', 'J4cMctMLnqe09TgT4b3N-BNOE3', {
+      dialect:  'postgres',
+      protocol: 'postgres',
+      port:     5432,
+      host:     'ec2-54-243-44-191.compute-1.amazonaws.com',
+      logging:  console.log
+    });
+    
+    
+sequelize
+.authenticate()
+.complete(function(err) {
+    if (err) {
+        console.log('Unable to connect to the database:', err);
+    } else {
+        console.log('Connection has been established successfully.');
+    }
+});
+
 var db        = {};
+
+console.log(env);
 
 fs
   .readdirSync(__dirname)

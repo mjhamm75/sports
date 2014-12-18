@@ -55,4 +55,4 @@ if (!global.hasOwnProperty('db')) {
  
 module.exports = global.db;
 
-console.log(global.db.sequelize);
+console.log(process.env);
