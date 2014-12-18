@@ -15,9 +15,9 @@ if (!global.hasOwnProperty('db')) {
     });
   } else {
     // the application is executed on the local machine ... use postgres
-    
+    console.log("**i'm right here**");
     sequelize = new Sequelize('postgres://mpwgblcimtalqt:J4cMctMLnqe09TgT4b3N-BNOE3@ec2-54-243-44-191.compute-1.amazonaws.com:5432/d7v0htmpq36aim', {
-  // Look to the next section for possible options
+    dialect: 'postgres'// Look to the next section for possible options
 })
     // sequelize = new Sequelize('d7v0htmpq36aim', 'mpwgblcimtalqt', 'J4cMctMLnqe09TgT4b3N-BNOE3', {
     //   dialect:  'postgres',
