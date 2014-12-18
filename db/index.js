@@ -24,6 +24,8 @@ if (!global.hasOwnProperty('db')) {
       };
   }
   
+  console.log(process.env);
+  
   sequelize
   .authenticate()
   .complete(function(err) {
