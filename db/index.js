@@ -15,13 +15,13 @@ if (!global.hasOwnProperty('db')) {
     });
   } else {
     // the application is executed on the local machine ... use postgres
-    sequelize = new Sequelize(
-      'sports', 
-      'postgres', 
-      'postgres'), {
-        dialect: "postgres",
-        port: 5432
-      };
+    sequelize = new Sequelize('d7v0htmpq36aim', 'mpwgblcimtalqt', 'J4cMctMLnqe09TgT4b3N-BNOE3', {
+      dialect:  'postgres',
+      protocol: 'postgres',
+      port:     5432,
+      host:     'ec2-54-243-44-191.compute-1.amazonaws.com',
+      logging:  console.log
+    });
   }
   
   console.log(process.env);

@@ -1,10 +1,5 @@
 {
-  "development": {
-    "use_env_variable": "postgres://mpwgblcimtalqt:J4cMctMLnqe09TgT4b3N-BNOE3@ec2-54-243-44-191.compute-1.amazonaws.com",
-    "dialect": "postgres",
-    "port": 5432,
-    "username": "mpwgblcimtalqt",
-    "password": "J4cMctMLnqe09TgT4b3N-BNOE3",
-    "database": "d7v0htmpq36aim"
+  "production": {
+  "use_env_variable": "DATABASE_URL"
   }
 }
